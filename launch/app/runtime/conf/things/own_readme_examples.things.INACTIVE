@@ -1,0 +1,14 @@
+//Bridge openwebnet:bus_gateway:mybridge "MyHOMEServer1" [ host="localhost", passwd="12345", port=20000, discoveryByActivation=true] {
+      //bus_on_off_switch             LR_switch            "Living Room Light"        [ where="51" ]
+      // ...
+      //bus_cen_scenario_control      LR_CEN_scenario      "Living Room CEN"          [ where="51", buttons="4,3,8"]
+      //bus_cenplus_scenario_control  LR_CENplus_scenario  "Living Room CEN+"         [ where="212", buttons="1,5,18" ]
+      //bus_thermo_zone  TZ "TZ"         [ where="a" ]  
+      
+      //bus_scenario_panel         BEDROOM_scenario_panel  "Bedroom Scenario Panel"  [ where="95" ]
+      
+      //  bus_aux                       Alarm_Control        "Alarm control"            [ where="4" ]
+
+      //  bus_alarm_system              Alarm_Sys            "Alarm System"             [ where="0"  ]
+      //  bus_alarm_zone                Alarm_Zone_3         "Alarm Zone 3"             [ where="3"  ]
+//} 

@@ -1,0 +1,47 @@
+
+/*
+rule "generic sendMessage test rule"
+when
+    Time cron "0 * * * * ? *"
+then
+   val actions = getActions("openwebnet","openwebnet:bus_gateway:MYHOMESERVER1_000350aaeeaa")
+    if(null === actions) {
+            logInfo("actions", "Actions not found, check thing ID")
+            return
+     }
+     logInfo("actions", " " + actions)
+     //actions.sendMessage("*#13**16##")
+     actions.sendMessage("*#5*0##")
+end
+*/
+
+rule "CEN+ virtual pressure from OH button"
+/* This rule triggers when the proxy item iCENPlusProxyItem is activated, for example from a button on WebUI/sitemap.
+When activated it sends a "virtual short pressure" of where=212, button=5 on the BUS 
+*/
+when 
+    Item iCENPlusProxyItem received command
+then
+    logInfo("send cen", "proxy item received command")
+    val actions = getActions("openwebnet","openwebnet:bus_cenplus_scenario_control:MYHOMESERVER1_000350aaeeaa:212")
+    actions.virtualPress("SHORT_PRESSURE", 5)
+end
+
+
+rule "CEN dimmer increase"
+// A "start pressure" event on CEN where=51, button=4 will increase dimmer%
+when
+    Channel "openwebnet:bus_cen_scenario_control:MYHOMESERVER1_000350aaeeaa:51:button#4" triggered START_PRESSURE
+then
+    sendCommand(DimmerWHERE22_Brightness, INCREASE)  
+end
+
+
+rule "CEN dimmer decrease"
+// A "release extended pressure" event on CEN where=51, button=4 will decrease dimmer%
+when
+    Channel "openwebnet:bus_cen_scenario_control:MYHOMESERVER1_000350aaeeaa:51:button#4" triggered RELEASE_EXTENDED_PRESSURE
+then
+    sendCommand(DimmerWHERE22_Brightness, DECREASE)  
+end
+
