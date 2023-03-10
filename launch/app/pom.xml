@@ -51,6 +51,34 @@
     </dependency>
 -->
 
+    <dependency>
+      <groupId>org.openhab.addons.bundles</groupId>
+      <artifactId>org.openhab.binding.openwebnet</artifactId>
+      <version>${project.version}</version>
+      <scope>runtime</scope>
+    </dependency>
+    
+	<dependency>
+      <groupId>org.openhab.addons.bundles</groupId>
+      <artifactId>org.openhab.persistence.rrd4j</artifactId>
+      <version>${project.version}</version>
+      <scope>runtime</scope>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.openhab.addons.bundles</groupId>
+      <artifactId>org.openhab.binding.astro</artifactId>
+      <version>${project.version}</version>
+      <scope>runtime</scope>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.openhab.addons.bundles</groupId>
+      <artifactId>org.openhab.binding.hue</artifactId>
+      <version>${project.version}</version>
+      <scope>runtime</scope>
+    </dependency>
+	
 <!-- uncomment this if you want to work on the Zigbee binding
     <dependency>
       <groupId>org.openhab.addons.bom</groupId>

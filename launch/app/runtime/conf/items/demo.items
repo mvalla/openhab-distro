@@ -1,16 +1,40 @@
-Group:Switch:OR(ON,OFF) DemoSwitchGroup [ "home-group" ]
+//Group:Switch:OR(ON,OFF) DemoSwitchGroup [ "home-group" ]
 
-Switch DemoSwitch (DemoSwitchGroup)
-Dimmer DemoDimmer (DemoSwitchGroup)
-Rollershutter DemoRollershutter
-Color DemoColor (DemoSwitchGroup)
-DateTime DemoDateTime
-Location DemoLocation
-String DemoString
-Contact DemoContact
-Number DemoNumber
-Image DemoImage
+//Switch DemoSwitch (DemoSwitchGroup)
+//Dimmer DemoDimmer (DemoSwitchGroup)
+//Rollershutter DemoRollershutter
+//Color DemoColor (DemoSwitchGroup)
+//DateTime DemoDateTime
+//Location DemoLocation
+//String DemoString
+//Contact DemoContact
+//Number DemoNumber
+//Image DemoImage
 
-Color MagicColor { channel="magic:color-light:magicColor:color" }
-Switch MagicOnOff { channel="magic:onoff-light:magicOnOff:switch" }
-Dimmer MagicDimmer { channel="magic:dimmable-light:magicDimmer:brightness" }
+//Color MagicColor { channel="magic:color-light:magicColor:color" }
+//Switch MagicOnOff { channel="magic:onoff-light:magicOnOff:switch" }
+//Dimmer MagicDimmer { channel="magic:dimmable-light:magicDimmer:brightness" }
+
+
+Switch iCENPlusProxyItem
+
+
+Group gVolets "Volets Roulants"                                         <rollershutter>
+    Rollershutter ChambreThibault_Shutter  "Volets Chambre Thibault"    <rollershutter> (gVolets,gGoogleHome)   {ga="Blinds",channel="openwebnet:bus_automation:mybridge:voletsroulantthibault:shutter"}
+
+
+//String iAux7 "Aux 7" {channel="openwebnet:bus_aux:mybridge:7:aux"}
+
+/*
+Switch iSwitch20 "Switch20"   {channel="openwebnet:bus_on_off_switch:mybridge:t20:switch"}
+Switch iSwitch21 "Switch21"   {channel="openwebnet:bus_on_off_switch:mybridge:t21:switch"}
+Switch iSwitch22 "Switch22"   {channel="openwebnet:bus_on_off_switch:mybridge:t22:switch"}
+Switch iSwitch23 "Switch23"   {channel="openwebnet:bus_on_off_switch:mybridge:t23:switch"}
+Switch iSwitch24 "Switch24"   {channel="openwebnet:bus_on_off_switch:mybridge:t24:switch"}
+Switch iSwitch25 "Switch25"   {channel="openwebnet:bus_on_off_switch:mybridge:t25:switch"}
+Switch iSwitch26 "Switch26"   {channel="openwebnet:bus_on_off_switch:mybridge:t26:switch"}
+Switch iSwitch27 "Switch27"   {channel="openwebnet:bus_on_off_switch:mybridge:t27:switch"}
+Switch iSwitch28 "Switch28"   {channel="openwebnet:bus_on_off_switch:mybridge:t28:switch"}
+Switch iSwitch29 "Switch29"   {channel="openwebnet:bus_on_off_switch:mybridge:t29:switch"}
+ 
+*/

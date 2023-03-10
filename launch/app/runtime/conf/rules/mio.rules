@@ -45,3 +45,33 @@ then
     sendCommand(DimmerWHERE22_Brightness, DECREASE)  
 end
 
+
+rule "lichts rule"
+when
+    Item HueSensor1_Motion changed
+then
+    logInfo("mio", "motion changed")
+
+    if (HueSensor1_Motion.state == ON) {
+        SwitchWHERE10_Switch.sendCommand(ON)
+        SwitchWHERE11_Switch.sendCommand(ON)
+        SwitchWHERE12_Switch.sendCommand(ON)
+        SwitchWHERE13_Switch.sendCommand(ON)        
+        SwitchWHERE14_Switch.sendCommand(ON)        
+        SwitchWHERE15_Switch.sendCommand(ON)        
+        SwitchWHERE16_Switch.sendCommand(ON)        
+        SwitchWHERE17_Switch.sendCommand(ON)        
+        SwitchWHERE18_Switch.sendCommand(ON)        
+        SwitchWHERE19_Switch.sendCommand(ON)        
+    } else {
+        logInfo("mio", "sensor is off")
+        Sw.sendCommand(OFF)
+        /*SwitchWHERE10_Switch.sendCommand(OFF)
+        Thread::sleep(1000)    
+        SwitchWHERE11_Switch.sendCommand(OFF)
+        Thread::sleep(1000)    
+        SwitchWHERE12_Switch.sendCommand(OFF) */
+        logInfo("mio", "all OFF")
+    }
+    
+end

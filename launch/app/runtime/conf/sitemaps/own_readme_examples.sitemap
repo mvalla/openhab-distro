@@ -1,0 +1,12 @@
+sitemap readme_example label="OpenWebNet Binding Example Sitemap"
+{
+   
+    
+     Frame label="Living Room"
+    {
+          Default item=iLR_switch           icon="light"
+          Default item=iLR_dimmer           icon="light"
+          Default item=iLR_shutter
+          Switch  item=iLR_IR_sensor        mappings=[ON="Presence", OFF="No Presence"]
+    }
+}

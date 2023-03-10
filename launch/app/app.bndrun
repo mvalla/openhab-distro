@@ -64,7 +64,8 @@ feature.openhab-model-runtime-all: \
 	bnd.identity;id='org.openhab.ui.basic',\
 	bnd.identity;id='org.openhab.ui.iconset.classic',\
 	bnd.identity;id='org.apache.aries.jax.rs.whiteboard',\
-	bnd.identity;id='org.ops4j.pax.web.pax-web-extender-whiteboard'
+	bnd.identity;id='org.ops4j.pax.web.pax-web-extender-whiteboard',\
+	bnd.identity;id='org.openhab.binding.openwebnet'
 
 -runfw: org.eclipse.osgi
 

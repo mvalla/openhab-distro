@@ -1,0 +1,47 @@
+Bridge openwebnet:bus_gateway:mybridge "MyHOMEServer1" [ host="localhost", passwd="12345" ] {
+
+/*
+    bus_on_off_switch t20 "Switch WHERE 20" [where="20" ]
+    bus_on_off_switch t21 "Switch WHERE 21" [where="21" ]
+    bus_on_off_switch t22 "Switch WHERE 22" [where="22" ]
+    bus_on_off_switch t23 "Switch WHERE 23" [where="23" ]
+    bus_on_off_switch t24 "Switch WHERE 24" [where="24" ]
+    bus_on_off_switch t25 "Switch WHERE 25" [where="25" ]
+    bus_on_off_switch t26 "Switch WHERE 26" [where="26" ]
+    bus_on_off_switch t27 "Switch WHERE 27" [where="27" ]
+    bus_on_off_switch t28 "Switch WHERE 28" [where="28" ]
+    bus_on_off_switch t29 "Switch WHERE 29" [where="29" ]
+    bus_on_off_switch t30 "Switch WHERE 30" [where="30" ]
+    bus_on_off_switch t31 "Switch WHERE 31" [where="31" ]
+    bus_on_off_switch t32 "Switch WHERE 32" [where="32" ]
+    bus_on_off_switch t33 "Switch WHERE 33" [where="33" ]
+    bus_on_off_switch t34 "Switch WHERE 34" [where="34" ]
+    bus_on_off_switch t35 "Switch WHERE 35" [where="35" ]
+    bus_on_off_switch t36 "Switch WHERE 36" [where="36" ]
+    bus_on_off_switch t37 "Switch WHERE 37" [where="37" ]
+    bus_on_off_switch t38 "Switch WHERE 38" [where="38" ]
+    bus_on_off_switch t39 "Switch WHERE 39" [where="39" ]
+    bus_on_off_switch t40 "Switch WHERE 40" [where="40" ]
+    bus_on_off_switch t41 "Switch WHERE 41" [where="41" ]
+    bus_on_off_switch t42 "Switch WHERE 42" [where="42" ]
+    bus_on_off_switch t43 "Switch WHERE 43" [where="43" ]
+    bus_on_off_switch t44 "Switch WHERE 44" [where="44" ]
+    bus_on_off_switch t45 "Switch WHERE 45" [where="45" ]
+    bus_on_off_switch t46 "Switch WHERE 46" [where="46" ]
+    bus_on_off_switch t47 "Switch WHERE 47" [where="47" ]
+    bus_on_off_switch t48 "Switch WHERE 48" [where="48" ]
+    bus_on_off_switch t49 "Switch WHERE 49" [where="49" ]
+    
+    bus_on_off_switch t51 "Switch WHERE 51" [where="51" ]
+    bus_on_off_switch t92 "Switch WHERE 92" [where="92" ]
+    
+    bus_on_off_switch tAA "Switch WHERE aa" [where="aa" ]
+ */
+   // bus_cen_scenario_control      LR_CEN_scenario      "Living Room CEN"          [ where="51", buttons="4,3,8"]
+   // bus_cenplus_scenario_control  LR_CENplus_scenario  "Living Room CEN+"         [ where="212", buttons="1,5,18" ]  
+  
+    //bus_xyz_thing XYZ     [ where="1"]
+   //generic_device XYZ111  "Generic XYZ111"   [ where="a2"]
+  // bus_thermo_zone Za  "Zone a"   [ where="5"]
+    
+} 

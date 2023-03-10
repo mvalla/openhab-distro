@@ -1,0 +1,4 @@
+Bridge openwebnet:zb_gateway:donglelegrand  [serialPort="COM3"]
+{
+    zb_automation voletsroulantthibault "ZigBee Automation Volets Thibault (WHERE=767876301#9)"     [ where="767876301#9"]
+}

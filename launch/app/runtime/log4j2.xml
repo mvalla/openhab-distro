@@ -3,6 +3,8 @@
 	<Appenders>
 		<Console name="STDOUT">
 			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%-5.5p] [%-36.36c] - %m%n"/>
+			<!-- CHANGE MVALLA -->
+			<PatternLayout pattern="%d{HH:mm:ss.SSS} %-5p [%-20.20t] [%-30.30c{36}:%-5line] - %m%ex{10}%n" />
 		</Console>
 
 		<!-- Rolling file appender -->
@@ -55,6 +57,30 @@
 		<!--
 		<Logger level="DEBUG" name="org.openhab.binding.YOURBINDINGNAME"/>
 		-->
+
+
+	<!--  == MVALLA-CHANGES  ============================================================================= -->
+        <!-- ERROR WARN INFO DEBUG TRACE -->
+        <Logger name="org.openwebnet4j" level="WARN" />
+        <Logger name="org.openwebnet4j.communication" level="WARN" />
+        <Logger name="org.openwebnet4j.communication.FrameChannel" level="WARN" />
+
+        <Logger name="org.openwebnet4j.communication.BUSConnector.message" level="DEBUG" />
+        <Logger name="org.openwebnet4j.communication.BUSConnector.message.event" level="DEBUG" />
+
+        <Logger name="org.openwebnet4j.communication.USBConnector.message" level="INFO" />
+        <Logger name="org.openwebnet4j.communication.USBConnector.handshake" level="WARN" />
+
+        <Logger name="org.openhab.binding.openwebnet" level="DEBUG" />
+        <Logger name="org.openhab.binding.openwebnet.internal.discovery" level="INFO" />
+        <Logger name="org.openhab.binding.openwebnet.internal.discovery.BusGatewayUpnpDiscovery" level="WARN" />
+
+        <Logger name="org.openhab.binding.hue" level="INFO" />
+
+        <!--   <Logger name="org.openhab.core.addon.marketplace" level="DEBUG" />   -->
+        <!--   <Logger name="org.jupnp" level="WARN" />   -->
+
+    <!--  == END MVALLA-CHANGES ============================================================================= -->
 
 		<!-- You can also override the variables of the loggers below to enable logging without -->
 		<!-- modifying this file. E.g. set 'logger.misc1.name' to 'org.openhab.binding.YOURBINDINGNAME' -->

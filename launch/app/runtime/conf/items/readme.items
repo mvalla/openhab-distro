@@ -1,0 +1,15 @@
+Switch              iAlarm_System_State         "Alarm state"                  (gAlarm)         { channel="openwebnet:bus_alarm_system:9652e03267:0:state" }
+Switch              iAlarm_System_Armed         "Alarm armed"                  (gAlarm)         { channel="openwebnet:bus_alarm_system:9652e03267:0:armed" }
+Switch              iAlarm_System_Network       "Alarm network"                (gAlarm)         { channel="openwebnet:bus_alarm_system:9652e03267:0:network" }
+String              iAlarm_System_Battery       "Alarm battery"                (gAlarm)         { channel="openwebnet:bus_alarm_system:9652e03267:0:battery" }
+Switch              iAlarm_Zone_1_State         "Zone 1 state"                 (gAlarm)         { channel="openwebnet:bus_alarm_zone:9652e03267:1:state" }
+String              iAlarm_Zone_1_Alarm         "Zone 1 alarm"                 (gAlarm)         { channel="openwebnet:bus_alarm_zone:9652e03267:1:alarm" }
+
+Switch              iAlarm_Zone_2_State         "Zone 2 state"                 (gAlarm)         { channel="openwebnet:bus_alarm_zone:9652e03267:2:state" }
+String              iAlarm_Zone_2_Alarm         "Zone 2 alarm"                 (gAlarm)         { channel="openwebnet:bus_alarm_zone:9652e03267:2:alarm" }
+
+Switch              iAlarm_Zone_3_State         "Zone 3 state"                 (gAlarm)         { channel="openwebnet:bus_alarm_zone:9652e03267:3:state" }
+String              iAlarm_Zone_3_Alarm         "Zone 3 alarm"                 (gAlarm)         { channel="openwebnet:bus_alarm_zone:9652e03267:3:alarm" }
+
+
+Switch              iLR_switch            "Light"               (livingRoom) { channel="openwebnet:bus_on_off_switch:mybridge:LR_switch:switch", ga="Light", homekit="Lighting" }

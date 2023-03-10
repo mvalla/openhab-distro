@@ -1,0 +1,8 @@
+rule "Basic scenario who=0"
+// A "SCENARIO_02" event on Basic Scenario module where=95 will switch ON iLR_switch
+when
+    Channel "openwebnet:bus_scenario:mybridge:95:scenario" triggered SCENARIO_02    
+then
+    logInfo("Basic scenario RULE ACTIVATED", "triggered SCENARIO_02")
+    sendCommand(iLR_switch,  ON)  
+end
