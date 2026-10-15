@@ -1,0 +1,117 @@
+
+
+rule "generic sendMessage test rule"
+when
+    Time cron "0 * * * * ? *"
+then
+  /* var actions = getActions("openwebnet","openwebnet:bus_gateway:mybridge")
+   if(null === actions) {
+            logInfo("actions", "Actions not found, check thing ID")
+            return
+   }
+    logInfo("actions", "actions = " + actions)
+    // actions.sendMessage("*#13**16##")
+     var s = actions.sendMessage("*1*0*93##")
+    // var result = actions.sendMessage("*22*22#4#9*2#1##")
+    // var result0 = actions.sendMessageWithResponse()
+    */
+     
+   /*  
+     var result = actions.sendMessage("*#4*1##")
+     logInfo("actions", "Result = " + result)
+     
+     var result2 = actions.sendMessage2("*#4*1##")
+     
+     logInfo("actions", "Result2 = " + result2)
+   */
+
+ 
+  /*
+   //var success = actions.sendMessage()
+  // logInfo("EventLog", "Success1: " + success)
+    
+  
+   var success = actions.sendMessage("")
+   logInfo("EventLog", "Success2: " + success)
+   
+   success = actions.sendMessage("*22*22#4#9*2#1##")
+   logInfo("EventLog", "Success3: " + success)
+
+   var result = actions.sendMessageWithResponse("*#4*1##")
+   logInfo("EventLog", "Success4: " + result.get("success"))
+   logInfo("EventLog", "Response: " + result.get("responseMessages"))
+*/
+
+val actions = getActions("openwebnet", "openwebnet:bus_gateway:mybridge")
+var success = actions.sendMessage("*22*22#4#9*2#1##")
+logInfo("EventLog", "Success: " + success)
+
+var result = actions.sendMessageWithResponse("*#4*1##")
+logInfo("EventLog", "Success: " + result.get("success"))
+logInfo("EventLog", "Response: " + result.get("responseMessages"))
+
+end
+
+
+rule "CEN+ virtual pressure from OH button"
+/* This rule triggers when the proxy item iCENPlusProxyItem is activated, for example from a button on WebUI/sitemap.
+When activated it sends a "virtual short pressure" of where=212, button=5 on the BUS 
+*/
+when 
+    Item iCENPlusProxyItem received command
+then
+    logInfo("send cen", "proxy item received command")
+    var actions = getActions("openwebnet","openwebnet:bus_cenplus_scenario_control:MYHOMESERVER1_000350aaeeaa:212")
+    actions.virtualPress("SHORT_PRESSURE", 5)
+end
+
+
+rule "CEN dimmer increase"
+// A "start pressure" event on CEN where=51, button=4 will increase dimmer%
+when
+    Channel "openwebnet:bus_cen_scenario_control:MYHOMESERVER1_000350aaeeaa:51:button#4" triggered START_PRESSURE
+then
+    sendCommand(DimmerWHERE22_Brightness, INCREASE)  
+end
+
+
+rule "CEN dimmer decrease"
+// A "release extended pressure" event on CEN where=51, button=4 will decrease dimmer%
+when
+    Channel "openwebnet:bus_cen_scenario_control:MYHOMESERVER1_000350aaeeaa:51:button#4" triggered RELEASE_EXTENDED_PRESSURE
+then
+    sendCommand(DimmerWHERE22_Brightness, DECREASE)  
+end
+
+
+/*
+rule "lichts rule"
+when
+    Item HueSensor1_Motion changed
+then
+    logInfo("mio", "motion changed")
+
+    if (HueSensor1_Motion.state == ON) {
+        SwitchWHERE10_Switch.sendCommand(ON)
+        SwitchWHERE11_Switch.sendCommand(ON)
+        SwitchWHERE12_Switch.sendCommand(ON)
+        SwitchWHERE13_Switch.sendCommand(ON)        
+        SwitchWHERE14_Switch.sendCommand(ON)        
+        SwitchWHERE15_Switch.sendCommand(ON)        
+        SwitchWHERE16_Switch.sendCommand(ON)        
+        SwitchWHERE17_Switch.sendCommand(ON)        
+        SwitchWHERE18_Switch.sendCommand(ON)        
+        SwitchWHERE19_Switch.sendCommand(ON)        
+    } else {
+        logInfo("mio", "sensor is off")
+        Sw.sendCommand(OFF)
+        //SwitchWHERE10_Switch.sendCommand(OFF)
+        //Thread::sleep(1000)    
+        //SwitchWHERE11_Switch.sendCommand(OFF)
+        //Thread::sleep(1000)    
+        //SwitchWHERE12_Switch.sendCommand(OFF)
+        logInfo("mio", "all OFF")
+    }
+    
+end
+*/

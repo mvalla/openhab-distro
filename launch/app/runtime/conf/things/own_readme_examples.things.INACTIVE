@@ -1,0 +1,43 @@
+//Bridge openwebnet:bus_gateway:mybridge "MyHOMEServer1" [ host="localhost", passwd="12345", port=20000, discoveryByActivation=true] {
+Bridge openwebnet:bus_gateway:mybridge "MyHOMEServer1" [ host="localhost", passwd="12345", port=20000 ] {
+
+     // bus_on_off_switch             LR_switchGEN            "All lights"        [ where="0" ]
+
+   //   bus_on_off_switch             LR_switchA5            "Area 5"        [ where="5" ]
+
+  //    bus_on_off_switch             LR_switch51            "LR Light 51"        [ where="51" ]
+   //   bus_on_off_switch             LR_switch52            "LR Light 52"        [ where="52" ]
+   //   bus_on_off_switch             LR_switch53            "LR Light 53"        [ where="53" ]
+   //   bus_on_off_switch             LR_switch0514          "LR Light 0514"      [ where="0514" ]
+      
+  //  bus_on_off_switch             LR_switchA6            "Area 6"        [ where="6" ]
+
+   //   bus_on_off_switch             LR_switch61            "Living Room Light 61"        [ where="61" ]     
+   //   bus_on_off_switch             LR_switch62            "Living Room Light 62"        [ where="62" ]
+
+   /* 
+      bus_on_off_switch             LR_switch00            "Living Room Light 00"        [ where="0000" ]
+      bus_on_off_switch             LR_switch01            "Living Room Light 01"        [ where="0001" ]
+      bus_on_off_switch             LR_switch02            "Living Room Light 02"        [ where="0002" ]
+      bus_on_off_switch             LR_switch03            "Living Room Light 03"        [ where="0003" ]
+      bus_on_off_switch             LR_switch04            "Living Room Light 04"        [ where="0004" ]
+      bus_on_off_switch             LR_switch05            "Living Room Light 05"        [ where="0005" ]
+      bus_on_off_switch             LR_switch06            "Living Room Light 06"        [ where="0006" ]
+      bus_on_off_switch             LR_switch07            "Living Room Light 07"        [ where="0007" ]
+      bus_on_off_switch             LR_switch08            "Living Room Light 08"        [ where="0008" ]
+      bus_on_off_switch             LR_switch09            "Living Room Light 09"        [ where="0009" ]
+      bus_on_off_switch             LR_switch19            "Living Room Light 10"        [ where="0010" ]
+  */
+    
+      // ...
+      //bus_cen_scenario_control      LR_CEN_scenario      "Living Room CEN"          [ where="51", buttons="4,3,8"]
+      //bus_cenplus_scenario_control  LR_CENplus_scenario  "Living Room CEN+"         [ where="212", buttons="1,5,18" ]
+      //bus_thermo_zone  TZ "TZ"         [ where="a" ]  
+      
+      //bus_scenario_panel         BEDROOM_scenario_panel  "Bedroom Scenario Panel"  [ where="95" ]
+      
+      //  bus_aux                       Alarm_Control        "Alarm control"            [ where="4" ]
+
+      //  bus_alarm_system              Alarm_Sys            "Alarm System"             [ where="0"  ]
+      //  bus_alarm_zone                Alarm_Zone_3         "Alarm Zone 3"             [ where="3"  ]
+} 

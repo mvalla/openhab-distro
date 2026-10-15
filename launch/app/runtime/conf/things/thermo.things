@@ -1,0 +1,5 @@
+Bridge openwebnet:bus_gateway:mybridge "MyHOMEServer1" [ host="localhost", passwd="12345", port=20000 ] {
+      
+        bus_thermo_cu      CU             "Thermo CU"             [ where="0"  ]
+        bus_thermo_zone    zone1          "Zone1"                 [ where="1" , standAlone=false  ]
+} 

@@ -1,0 +1,3 @@
+Group gVolets "Volets Roulants"                                                                             <rollershutter>
+    Rollershutter ChambreThibault_Shutter       "Volets Chambre Thibault"     <rollershutter> (gVolets,gGoogleHome)   {ga="Blinds",channel="openwebnet:zb_automation:donglelegrand:voletsroulantthibault:shutter"}
+    

@@ -1,0 +1,15 @@
+rule "double off"
+when 
+    Item iDoubleOff received command
+then
+    logInfo("offoff", "double off rule activated")
+    sendCommand(Dimmer_WHERE25_Luminosita,  OFF)  
+    Thread::sleep(10000)
+    logInfo("offoff", "sending second OFF...")
+    sendCommand(Dimmer_WHERE25_Luminosita,  OFF)  
+        
+    //Thread::sleep(10000)
+    //logInfo("offoff", "sending ON...")
+    //sendCommand(Dimmer_WHERE25_Luminosita,  ON)  
+    
+end

@@ -1,0 +1,63 @@
+sitemap thermo label="Thermo Sitemap" {
+    
+    
+    Frame label="Thermo CU"
+    {
+        Setpoint    item=iCU_setTemp        label="Manual Setpoint [%.1f °C]"      icon="material:thermostat"     step=0.5 minValue=15 maxValue=30  //visibility=[iCU_mode=="MANUAL"]
+        Switch      item=iCU_func           label="Function"                icon="material:sunny_snowing"          mappings=[HEATING="Heating", COOLING="Cooling"]
+
+        Switch      item=iCU_mode           label="Mode"                    icon=["OFF"=material:power_settings_new, "WEEKLY"=material:today, "MANUAL"=material:front_hand, "VACATION"=material:work_history, "HOLIDAY"=material:meeting_roon , "SCENARIO"=material:auto_awesome_motion , "PROTECTION"=material:severe_cold]          mappings=[WEEKLY="Week",  MANUAL="Man", SCENARIO="Scen", HOLIDAY="Holiday", VACATION="Vacation", OFF="Off", PROTECTION="Prot"]
+        
+        Switch      item=iCU_wpn            label="Weekly Program"          icon="material:today"          mappings=[1="Program 1", 2="Program 2", 3="Program 3"]         
+        Default     item=iCU_spn            label="Scenario"                icon="material:auto_awesome_motion"
+        
+        Default     item=iCU_at1off         label="At least 1 Off"          icon="material:settings"
+
+        Input     item=iCU_vacationDays   label="Vacation Days"       icon="material:work_history"
+        
+
+     //   Text        item=iCU_remote         label="Remote Control"          icon="movecontrol"
+        
+       // Default     item=iCU_battery        label="Battery"                 icon="material:battery_full"
+        Default     item=iCU_at1pro         label="At least 1 Protection"   icon="material:settings" 
+        
+   //     Default     item=iCU_failure        label="Failure"                 icon="material:error_outline"
+        Text        item=none               label=""                  icon="none"
+        Default     item=iCU_at1man         label="At least 1 Manual"       icon="material:settings"
+       
+    }
+
+    Frame label="Thermo Zone 1"
+    {
+        Setpoint    item=iZone1_setTemp     label="Manual Setpoint [%.1f °C]"  icon="material:thermostat"      step=0.5 minValue=15 maxValue=30
+        Switch      item=iZone1_func        label="Function"            icon="material:sunny_snowing"            //  mappings=[HEATING="Heating", COOLING="Cooling", GENERIC="Generic"]
+
+        Default     item=iZone1_temp        label="Current Temperature" icon="material:thermostat"      valuecolor=[<18="blue"] 
+        Default     item=iZone1_tempTarget  label="Target Temperature"  icon="material:vertical_align_center"
+        Switch      item=iZone1_mode        label="Mode"                icon=["OFF"=material:power_settings_new, "AUTO"=material:autorenew, "MANUAL"=material:front_hand, "PROTECTION"=material:severe_cold]        mappings=[AUTO="Auto", OFF="Off", PROTECTION="Prot", MANUAL="Man"]
+        
+        Switch      item=iZone1_offset      label="Offset"               icon="material:settings_input_svideo"            mappings=[OFF="Off", PROTECTION="Prot", PLUS_3="+3", PLUS_2="+2", PLUS_1="+1", NORMAL="NORMAL", MINUS_1="-1", MINUS_2="-2", MINUS_3="-3" ]
+  //      Text        item=none
+        
+        Text        item=iZone1_actuators   label="Actuators"         icon="material:play_for_work"     iconcolor=[ON="green"]
+        Text        item=none               label=""                  icon="none"
+     //     Switch      item=iZone1_fanSpeed    label="Fan"               icon="fan"                  mappings=[AUTO="AUTO", OFF="Off", SPEED_1="Low", SPEED_2="Medium", SPEED_3="High" ]
+        
+        Default     item=iZone1_hv          label="Heating valves status"        icon="material:local_fire_department"  iconcolor=[ON="red"]
+        Default     item=iZone1_cv          label="Conditioning valves status"   icon="material:ac_unit"                iconcolor=[ON="blue"]
+
+        Default     item=iZone1_heating     label="Heating"           icon="material:local_fire_department"  iconcolor=[ON="red"]
+        Default     item=iZone1_cooling     label="Cooling"           icon="material:ac_unit"                iconcolor=[ON="blue"]
+                
+    }
+    
+/*
+
+
+String              iCU_battery            "Battery Status"                       (gCentralUnit)    { channel="openwebnet:bus_thermo_cu:mybridge:CU:batteryStatus" }
+Switch              iCU_failure            "Failure discovered"                   (gCentralUnit)    { channel="openwebnet:bus_thermo_cu:mybridge:CU:failureDiscovered" }
+
+*/
+
+
+}

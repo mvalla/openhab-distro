@@ -1,0 +1,36 @@
+
+
+// 4 zones thermo central unit
+Group               gCU                    "CU-4"
+Number:Temperature  iCU_setTemp            "CU Temperature"                          (gCentralUnit)    { channel="openwebnet:bus_thermo_cu:mybridge:CU:setpointTemperature" }
+String              iCU_func               "CU Function"                             (gCentralUnit)    { channel="openwebnet:bus_thermo_cu:mybridge:CU:function" }
+String              iCU_mode               "CU Mode"                                 (gCentralUnit)    { channel="openwebnet:bus_thermo_cu:mybridge:CU:mode" }
+Number              iCU_wpn                "CU Weekly Program"                       (gCentralUnit)    { channel="openwebnet:bus_thermo_cu:mybridge:CU:weeklyProgram" }
+Number              iCU_spn                "CU Scenario Program"                     (gCentralUnit)    { channel="openwebnet:bus_thermo_cu:mybridge:CU:scenarioProgram" }
+Number              iCU_vacationDays       "CU Vacation Days"                        (gCentralUnit)    { channel="openwebnet:bus_thermo_cu:mybridge:CU:vacationDays" }
+
+Switch              iCU_at1off             "CU At least one probe in OFF"            (gCentralUnit)    { channel="openwebnet:bus_thermo_cu:mybridge:CU:atLeastOneProbeOff" }
+Switch              iCU_at1pro             "CU At least one probe in PROTECTION"     (gCentralUnit)    { channel="openwebnet:bus_thermo_cu:mybridge:CU:atLeastOneProbeProtection" }
+Switch              iCU_at1man             "CU At least one probe in MANUAL"         (gCentralUnit)    { channel="openwebnet:bus_thermo_cu:mybridge:CU:atLeastOneProbeManual" }
+String              iCU_remote             "CU Remote Control"                       (gCentralUnit)    { channel="openwebnet:bus_thermo_cu:mybridge:CU:remoteControl" }
+String              iCU_battery            "CU Battery Status"                       (gCentralUnit)    { channel="openwebnet:bus_thermo_cu:mybridge:CU:batteryStatus" }
+Switch              iCU_failure            "CU Failure discovered"                   (gCentralUnit)    { channel="openwebnet:bus_thermo_cu:mybridge:CU:failureDiscovered" }
+
+
+// zone 1
+Group               gZone1            "Living Room Zone 1"
+Number:Temperature  iZone1_temp               "Temperature [%.1f %unit%]"   (gZone1) { channel="openwebnet:bus_thermo_zone:mybridge:zone1:temperature" }
+Number:Temperature  iZone1_setTemp            "SetPoint Temperature"        (gZone1) { channel="openwebnet:bus_thermo_zone:mybridge:zone1:setpointTemperature" }
+Number:Temperature  iZone1_tempTarget         "Target Temperature"          (gZone1) { channel="openwebnet:bus_thermo_zone:mybridge:zone1:targetTemperature" }
+String              iZone1_func               "Function"                    (gZone1) { channel="openwebnet:bus_thermo_zone:mybridge:zone1:function" }
+String              iZone1_mode               "Mode"                        (gZone1) { channel="openwebnet:bus_thermo_zone:mybridge:zone1:mode" }
+String              iZone1_offset             "Local offset"                (gZone1) { channel="openwebnet:bus_thermo_zone:mybridge:zone1:localOffset" }
+
+String              iZone1_actuators          "Actuators"                   (gZone1) { channel="openwebnet:bus_thermo_zone:mybridge:zone1:actuators" }
+String              iZone1_hv                 "Heating valves"              (gZone1) { channel="openwebnet:bus_thermo_zone:mybridge:zone1:heatingValves" }
+String              iZone1_cv                 "Conditioning valves"         (gZone1) { channel="openwebnet:bus_thermo_zone:mybridge:zone1:conditioningValves" }
+//String              iZone1_fanSpeed           "FanSpeed"                  (gZone1) { channel="openwebnet:bus_thermo_zone:mybridge:zone1:speedFanCoil" }
+Switch              iZone1_heating            "Heating"                     (gZone1) { channel="openwebnet:bus_thermo_zone:mybridge:zone1:heating" }
+Switch              iZone1_cooling            "Cooling"                     (gZone1) { channel="openwebnet:bus_thermo_zone:mybridge:zone1:cooling" }
+
+// String      none "" <none>
